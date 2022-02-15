@@ -11,31 +11,31 @@ WOORI ORI Hanra Jeong Jusung Park Jooyoung Lee
 
 * The template of the code is from the opensource, Github, I used it because doing the setting for the game in WatchOS is really complicated, requires a lot of libraries to install, so using the already set template helped me reducing time consumption on downloading all of those things. However, I converted every parts of the code into our own code.
 
-Inspiration
+- Inspiration
 
 Inspired by a personal pet that can easily communicate with us
 
-What it does
+- What it does
 
 It interacts with me
 
-How we built it
+- How we built it
 
 Using Swift on Xcode
 
-Challenges we ran into
+- Challenges we ran into
 
 Learning Swift for the first time and using its application
 
-Accomplishments that we're proud of
+- Accomplishments that we're proud of
 
 We successfully managed to compile our pet
 
-What we learned
+- What we learned
 
 Multiple source codes are required even for a simple application
 
-What's next for ORI DUCK
+- What's next for ORI DUCK
 
 Add more stage : from egg to the adult duck
 Add more function : Let it be more interactive with the user
