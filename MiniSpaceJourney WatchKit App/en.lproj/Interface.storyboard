@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="19529" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WYQ-re-f9O">
+    <device id="watch38"/>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="19514"/>
+    </dependencies>
+    <scenes>
+        <!--Menu-->
+        <scene sceneID="CzN-PW-ubj">
+            <objects>
+                <controller identifier="MainMenu" title="Menu" id="kfn-Bo-AGf" customClass="MainMenuController" customModule="MiniSpaceJourney_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="1" height="61" alignment="left" text="BABO" textAlignment="center" numberOfLines="2" id="YYM-0V-GaN">
+                            <color key="textColor" red="1" green="0.75773069128106751" blue="0.023618511495519301" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
+                        </label>
+                        <button width="1" alignment="left" hidden="YES" title="Settings" id="UAF-QU-lXC">
+                            <fontDescription key="font" type="system" pointSize="20"/>
+                            <connections>
+                                <segue destination="mZe-Cs-aIe" kind="push" id="yse-sB-mfv"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="center" verticalAlignment="bottom" title="🐥 PLAY 🐥" id="GEZ-Qr-nAa">
+                            <fontDescription key="font" type="system" pointSize="24"/>
+                            <connections>
+                                <segue destination="AgC-eL-Hgc" kind="push" id="Vy2-YZ-CVT"/>
+                            </connections>
+                        </button>
+                        <label alignment="center" verticalAlignment="center" text="WOORI ORI. CO" id="nYM-YZ-hw4"/>
+                    </items>
+                    <variation key="default">
+                        <mask key="items">
+                            <exclude reference="UAF-QU-lXC"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <outlet property="startTitle" destination="YYM-0V-GaN" id="1vZ-I0-jlm"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-258" y="31"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="5FS-e5-3MO">
+            <objects>
+                <controller identifier="SettingsMenu" title="Settings" id="mZe-Cs-aIe" customClass="SettingsMenuController" customModule="MiniSpaceJourney_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <picker height="100" alignment="left" id="7bu-sK-xkA">
+                            <connections>
+                                <action selector="pickedSelectedItem:" destination="mZe-Cs-aIe" id="9tz-cF-Wfn"/>
+                            </connections>
+                        </picker>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="52" y="31"/>
+        </scene>
+        <!--GameScene-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="GameScreen" title="GameScene" fullScreen="YES" id="AgC-eL-Hgc" customClass="GameScreenController" customModule="MiniSpaceJourney_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <button width="1" height="18" alignment="left" title="&quot;BABO&quot;" id="Jsz-xz-Vdg">
+                            <connections>
+                                <segue destination="RP6-B3-oz8" kind="push" id="4nZ-uy-PdF"/>
+                            </connections>
+                        </button>
+                        <spriteKitScene height="183" alignment="left" id="ARY-87-yzO">
+                            <gestureRecognizers>
+                                <swipeGestureRecognizer id="chX-iw-wva">
+                                    <connections>
+                                        <action selector="swipedRight:" destination="AgC-eL-Hgc" id="l0D-zs-zTH"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                            </gestureRecognizers>
+                        </spriteKitScene>
+                    </items>
+                    <connections>
+                        <outlet property="skInterface" destination="ARY-87-yzO" id="U6w-Od-uXj"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="52" y="-273"/>
+        </scene>
+        <!--shuttle-->
+        <scene sceneID="ssS-5r-ddt">
+            <objects>
+                <controller backgroundImage="shuttle" id="RP6-B3-oz8" customClass="StatController" customModule="MiniSpaceJourney_WatchKit_Extension">
+                    <items>
+                        <label width="134" height="19" alignment="left" verticalAlignment="bottom" text="🍽 : 5, 😀 : 7" textAlignment="center" id="tkJ-Aq-xfZ" userLabel="score">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
+                        </label>
+                        <button width="133" alignment="left" title="Feed Me 🍽 " id="cWP-xd-b3e" userLabel="FeedMe">
+                            <color key="titleColor" red="1" green="0.53576582370000003" blue="0.18998540850000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="font" type="boldSystem" pointSize="15"/>
+                            <connections>
+                                <action selector="feeding" destination="RP6-B3-oz8" id="vQW-oQ-dBl"/>
+                            </connections>
+                        </button>
+                        <button width="132" alignment="left" title="Play⚽️" id="Yoz-d5-tLn" userLabel="PlayMe">
+                            <color key="titleColor" red="1" green="0.53576582370000003" blue="0.18998540850000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="font" type="boldSystem" pointSize="15"/>
+                            <connections>
+                                <action selector="playing" destination="RP6-B3-oz8" id="3t6-3t-zL9"/>
+                                <segue destination="w9U-TL-2cf" kind="push" id="LcM-XZ-kFW"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="FeedMe" destination="cWP-xd-b3e" id="fyv-ZX-LE0"/>
+                        <outlet property="PlayMe" destination="Yoz-d5-tLn" id="s52-hl-wDf"/>
+                        <outlet property="Statuschange" destination="tkJ-Aq-xfZ" id="9v1-Xn-vB7"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="302" y="-263"/>
+        </scene>
+        <!--duck_eating-->
+        <scene sceneID="Lnf-IV-OGT">
+            <objects>
+                <controller backgroundImage="duck_eating" id="w9U-TL-2cf" customClass="StatController" customModule="MiniSpaceJourney_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="FEED ME" id="uG5-5F-0Cn"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="553" y="-397"/>
+        </scene>
+        <!--duck_soccer-->
+        <scene sceneID="9aA-ns-YgD">
+            <objects>
+                <controller backgroundImage="duck_soccer" id="vgW-MC-tLS" customClass="Stat2Controller" customModule="MiniSpaceJourney_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="PLAY WITH ME" id="zCz-ng-Cra"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="556" y="-109"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="RhS-IZ-yrd">
+            <objects>
+                <controller id="WYQ-re-f9O">
+                    <items>
+                        <button width="1" height="30" alignment="center" verticalAlignment="bottom" title="START" id="Vdh-sX-zMt">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="0.48648682700000001" green="0.4856662309" blue="0.5" alpha="0.80416973920000001" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="20"/>
+                            <connections>
+                                <segue destination="kfn-Bo-AGf" kind="push" id="rc3-K4-aam"/>
+                            </connections>
+                        </button>
+                        <imageView width="114" height="112" alignment="center" image="duck" id="PMX-wn-jSv"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-562" y="-4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="duck" width="652" height="640"/>
+        <image name="duck_eating" width="483" height="517"/>
+        <image name="duck_soccer" width="448" height="557"/>
+        <image name="shuttle" width="125" height="204"/>
+    </resources>
+</document>
