@@ -7,6 +7,8 @@
 
 WOORI ORI Hanra Jeong Jusung Park Jooyoung Lee
 
+<img width="436" alt="image" src="https://user-images.githubusercontent.com/87463803/153993078-1ae57e30-47d4-4a64-9dd9-6c622d46d27c.png">
+
 * The template of the code is from the opensource, Github, I used it because doing the setting for the game in WatchOS is really complicated, requires a lot of libraries to install, so using the already set template helped me reducing time consumption on downloading all of those things. However, I converted every parts of the code into our own code.
 
 Inspiration
